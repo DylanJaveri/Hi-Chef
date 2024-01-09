@@ -1,0 +1,17 @@
+[
+    {
+        "email": "mail@mail.com",
+        "subject": "Please send me a pricelist",
+        "message": "This is my message"
+    },
+    {
+        "email": "mail@mail.com",
+        "subject": "Please send me a pricelist",
+        "message": "This is my second message"
+    },
+    {
+        "email": "mail@mail.com",
+        "subject": "Please send me a car",
+        "message": "This is my third message"
+    }
+]

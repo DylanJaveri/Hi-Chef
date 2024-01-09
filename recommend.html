@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Recommend</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="Recommendcript.js"></script>
+</head>
+
+<body class="indexgrade">
+  <div class="header">
+		<img class="serch" style="float: left; height: 60px;" src="Veggie Logo.png">
+    <a class="button" href="index.html">
+      <h1 class="fooddd">Hi Chef</h1>
+    </a>
+  </div>
+  
+  <div class="subheading">
+    <div style="margin-left: 10vw;">
+      <a href="index.html" style="margin: 0px;">
+        <h2 class="home"> Home</h2>
+      </a>
+    </div>
+    <a href="cuisines.html">
+      <h2 class="cuisine"> Cuisines</h2>
+    </a>
+    <a href="translate.html">
+      <h2 class="cuisine">Translate</h2>
+    </a>
+	<a href="recommend.html">
+		<h2 class="cuisine">Recommend</h2>
+	  </a>
+  </div>
+<h2 class="database">Recommend</h2>
+<hr>
+<br>
+
+
+  <div class="recommendo">
+  <section class="contact-form">
+	<h1>Send Me a Message</h1>
+	<p style="margin-top: 0.5rem;">Use this handy contact form to get in touch with me.</p>
+	
+	<form>
+	  
+	  <div class="input-group">
+		<label for="name">Full Name</label>
+		<input id="name" name="name" type="text"/>
+	  </div>
+	  
+	  <div class="input-group">
+		<label for="email">Email Address</label>
+		<input id="email" name="email" type="email"/>
+	  </div>
+	  
+	  <div class="input-group">
+		<label for="subject">How can I help you?</label>
+		<select id="subject" name="subject">
+		  <option>I would like to recommend a restaurant.</option>
+		  <option>I would like to recommend additional information.</option>
+		</select>
+	  </div>
+	  
+	  <div class="input-group">
+		<label for="message">Enter a Message</label>
+		<textarea id="message" name="message" rows="6" cols="65"></textarea>
+	  </div>
+	  
+	  <button type="submit">Submit</button>
+	</form>
+  </section>
+</div>
+
+  <script>
+    function submitForm() {
+      const form = document.querySelector('.contact-form');
+      const data = new FormData(form);
+
+      // Handle form submission asynchronously (e.g., using fetch)
+      fetch('/Recommend.json', {
+        method: 'POST',
+        body: data
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response (success or error)
+        const results = document.querySelector('.results pre');
+        results.innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('Error submitting form data:', error);
+      });
+    }
+  </script>
+
+</body>
+</html>

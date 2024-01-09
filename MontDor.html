@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mona d'Or</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="rez">
+  <div class="header">
+		<img class="serch" src="Veggie Logo.png">
+    <a class="button" href="index.html">
+    <h1 class="fooddd">Hi Chef</h1> </a>
+  </div>
+  
+  <div class="subheading">
+    <div style="margin-left: 10vw;"> <a href="index.html" style="margin: 0px;">
+      <h2 class="home"> Home</h2></a></div>
+    <a href="cuisines.html">
+      <h2 class="cuisine"> Cuisines</h2></a>
+<a href="translate.html">
+    <h2 class="cuisine">Translate</h2></a>
+    <a href="recommend.html">
+    <h2 class="cuisine">Recommend</h2></a>
+  </div>
+  <div class="traceback">
+    <a class="initial" href="cuisines.html">Cuisines</a>
+    <p class="inline">&gt;</p>
+    <a class="inline" href="italian.html">Italian</a>
+</div>
+<div class="IRDIV">
+      <h2 class="IR">Mona d'Or</h2>
+  </div>
+  <div class="infosheet">
+  <p class="piece" id="address">〒650-0004 兵庫県神戸市中央区中山手通２丁目１７−11 シャルマン中山手</p>
+  <p class="piece"> 078-291-0811 </p>
+  <p class="piece"> facebook.com/pizzeriamontdor </p>
+  <p class="piece" id="time"> Open 12am to 2pm & 6pm to 9pm (Monday Closed) </p>
+  </div>
+  
+  <hr>
+
+  <div class="sizing" id="restaraunt">
+    <br>
+  <div class="IML">
+      <img class="SpImage" id="size" src="Mona-Lisa.jpg">
+      <div class="menu" id="size">
+    <h3 class="p12">Menu</h3>
+    <hr>
+    <div class="menuflex"><ul> 
+    <div><li class="largemenu">Green Salad (VJ)</li>
+      <p class="midmenu">Green Salad</p>
+      <p class="smallmenu">(VJ)</p> </div>
+    <div><li class="largemenu">Caprese (VJ)</li>
+      <p class="midmenu">Caprese</p>
+      <p class="smallmenu">(VJ)</p> </div>
+    <div><li class="largemenu">Eggplant Gratin (V)</li>
+      <p class="midmenu">Eggplant Gratin</p>
+      <p class="smallmenu">(V)</p> </div>
+    <div><li class="largemenu">Rose Pasta (VJ)</li>
+      <p class="midmenu">Rose Pasta </p>
+      <p class="smallmenu">(VJ)</p> </div>
+    <div><li class="largemenu">Gorgonzola (V)</li>
+       <p class="midmenu">Gorgonzola </p>
+      <p class="smallmenu">(V)</p> </div>
+    <span id="dots"></span>
+    <div id="more">
+    <div><li class="largemenu"> Margarita Pizza (VJ)</li>
+      <p class="midmenu">Margarita Pizza</p>
+      <p class="smallmenu">(VJ)</p> </div>
+      <div><li class="largemenu"> Salad Pizza (VJ)</li>
+        <p class="midmenu">Salad Pizza</p>
+        <p class="smallmenu">(VJ)</p> </div>
+        <div><li class="largemenu"> Calzone (VJ)</li>
+          <p class="midmenu">Calzone</p>
+          <p class="smallmenu">(VJ)</p> </div>
+        </div>
+    <hr class="spacious">
+    <p onclick="myFunction()" id="myBtn">See Full Menu</p>
+    </ul>
+    </div>
+    </div>
+  
+    <div class="Info" id="size">
+    <h3 class="p12">Location and Contact</h3>
+    <hr>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.273769495879!2d135.1850003853806!3d34.69827420309814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008ee0e569e0a9%3A0x4422124143b2359c!2z44Oi44OK44Oq44K1!5e0!3m2!1sen!2sjp!4v1692106447448!5m2!1sen!2sjp" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:180px;width: -webkit-fill-available;border:none;overflow:hidden;margin: 10px;margin-right: 10px;"></iframe>
+    <div class="links">
+    <a href="https://m.facebook.com/pizzeriamontdor" class="link"><p>Website →</p></a>
+    <a href="tel:078-291-0811" class="link"><p>Phone →</p></a>
+    <a href="https://maps.app.goo.gl/wKfCGqsRwF5UfUbY8?g_st=ic" class="link"><p>Google Maps →</p></a>
+  </div>
+  </div>
+    </div>
+ <div class="country">
+    <img src="/Images/3.jpg" class="count-img">
+    <div class="centered">Welcome to Kobe!</div>
+ </div>
+  
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "See Full Menu";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}</script>
+  
+  
+  <p class="footer">VJ = Vegetarian/Jain Option. V = Vegetarian</p>
+  </div>
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+  </script>
+  
+  
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body>
+
+</html>
