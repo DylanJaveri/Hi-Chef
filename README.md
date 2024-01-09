@@ -1,1 +1,4 @@
-# Restaraunt
+# HiChef
+---
+permalink: /index.html
+---
