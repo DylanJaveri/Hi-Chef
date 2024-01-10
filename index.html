@@ -75,34 +75,54 @@
 	<br>
 
     <script>
-			$(document).ready(function() {
-				$("#messageArea").on("submit", function(event) {
-					const date = new Date();
-					const hour = date.getHours();
-					const minute = date.getMinutes();
-					const str_time = hour+":"+minute;
-					var rawText = $("#text").val();
-
-					var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
-					
-					$("#text").val("");
-					$("#messageFormeight").append(userHtml);
-
-					$.ajax({
-						data: {
-							msg: rawText,	
-						},
-						type: "POST",
-						url: "http://localhost:8080/get",
-					}).done(function(data) {
-						console.log(data.res);
-						var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + data.res + '<span class="msg_time">' + str_time + '</span></div></div>';
-						$("#messageFormeight").append($.parseHTML(botHtml));
-					});
-					event.preventDefault();
-				});
+		function scrollToBottom() {
+		  var messageFormeight = document.getElementById('messageFormeight');
+		  messageFormeight.scrollTop = messageFormeight.scrollHeight;
+		}
+	
+		$(document).ready(function() {
+		  $("#messageArea").on("submit", function(event) {
+			event.preventDefault();
+	
+			const date = new Date();
+			const hour = date.getHours();
+			const minute = date.getMinutes();
+			const str_time = hour + ":" + minute;
+			var rawText = $("#text").val();
+	
+			var userHtml = '<div class="d-flex justify-content-end mb-4">' +
+			  '<div class="msg_cotainer_send">' + rawText +
+			  '<span class="msg_time_send">' + str_time + '</span></div>' +
+			  '<div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+	
+			$("#text").val("");
+			$("#messageFormeight").append(userHtml);
+			scrollToBottom();
+	
+			// Send user message to server for processing
+			$.ajax({
+			  data: { msg: rawText },
+			  type: "POST",
+			  url: "http://localhost:8080/get",
+			}).done(function(data) {
+			  const botResponse = data.res; // Get the response from the server
+	
+			  const botDate = new Date();
+			  const botHour = botDate.getHours();
+			  const botMinute = botDate.getMinutes();
+			  const botStr_time = botHour + ":" + botMinute;
+	
+			  var botHtml = '<div class="d-flex justify-content-start mb-4">' +
+				'<div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div>' +
+				'<div class="msg_cotainer">' + botResponse +
+				'<span class="msg_time">' + botStr_time + '</span></div></div>';
+	
+			  $("#messageFormeight").append(botHtml);
+			  scrollToBottom();
 			});
-		</script>
+		  });
+		});
+	  </script>
 	<p class="footer" style="max-width: inherit;">Contact Email: HiChefWebsite@gmail.com</p>
 </body>
 
