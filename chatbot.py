@@ -26,7 +26,7 @@ classes = pickle.load(open("classes.pkl", "rb"))
 
 def clean_up_message(message):
     sentence_words = nltk.word_tokenize(message)
-    sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
+    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
 def bag_of_words(message):
